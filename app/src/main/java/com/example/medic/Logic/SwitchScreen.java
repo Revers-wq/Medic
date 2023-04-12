@@ -1,10 +1,12 @@
-package com.example.medic;
+package com.example.medic.Logic;
+
+import com.example.medic.R;
+import com.example.medic.controlers.ViewPagerItem;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class SwitchScreen {
-    ArrayList<ViewPagerItem> viewPagerItemArrayList;
+    public ArrayList<ViewPagerItem> viewPagerItemArrayList;
     public void setFinish(boolean finish) {
         this.finish = finish;
     }

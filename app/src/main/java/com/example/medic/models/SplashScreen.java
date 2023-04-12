@@ -1,9 +1,11 @@
-package com.example.medic;
+package com.example.medic.models;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.example.medic.R;
 
 public class SplashScreen extends AppCompatActivity {
 

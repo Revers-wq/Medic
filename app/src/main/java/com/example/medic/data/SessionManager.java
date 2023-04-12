@@ -1,4 +1,4 @@
-package com.example.medic;
+package com.example.medic.data;
 
 import android.content.Context;
 import android.content.SharedPreferences;

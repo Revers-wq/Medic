@@ -1,4 +1,4 @@
-package com.example.medic;
+package com.example.medic.models;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.medic.R;
+import com.example.medic.data.SessionManager;
+import com.example.medic.Logic.SwitchScreen;
 
 public class MainActivity extends AppCompatActivity {
     SessionManager sessionManager;

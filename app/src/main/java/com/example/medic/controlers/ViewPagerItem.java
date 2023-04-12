@@ -1,7 +1,8 @@
-package com.example.medic;
+package com.example.medic.controlers;
 
 public class ViewPagerItem {
-    String mainText, text;
+    public String mainText;
+    public String text;
 
     public ViewPagerItem(String mainText, String text, int imageId) {
         this.mainText = mainText;
@@ -9,5 +10,5 @@ public class ViewPagerItem {
         this.imageId = imageId;
     }
 
-    int imageId;
+    public int imageId;
 }
