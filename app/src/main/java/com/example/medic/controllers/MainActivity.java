@@ -1,4 +1,4 @@
-package com.example.medic.models;
+package com.example.medic.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 

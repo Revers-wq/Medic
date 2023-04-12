@@ -1,4 +1,4 @@
-package com.example.medic.controlers;
+package com.example.medic.models;
 
 public class ViewPagerItem {
     public String mainText;

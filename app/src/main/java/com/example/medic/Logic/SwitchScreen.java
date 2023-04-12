@@ -1,7 +1,7 @@
 package com.example.medic.Logic;
 
 import com.example.medic.R;
-import com.example.medic.controlers.ViewPagerItem;
+import com.example.medic.models.ViewPagerItem;
 
 import java.util.ArrayList;
 
