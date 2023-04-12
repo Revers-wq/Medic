@@ -27,6 +27,36 @@ public class SessionManager {
         else
         {return false;}
     }
+    public void saveEmail(String email)
+    {
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putString("email", email);
+        editor.apply();
+    }
+    public void saveToken(String token)
+    {
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putString("token", token);
+        editor.apply();
+    }
+    public String getEmail()
+    {
+        return sharedPreferences.getString("email", null);
+    }
+    public void saveCode(String code)
+    {
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putString("code", code);
+        editor.apply();
+    }
+    public String getToken()
+    {
+        return sharedPreferences.getString("token", null);
+    }
+    public String getCode()
+    {
+        return sharedPreferences.getString("code", null);
+    }
 
 
 }
