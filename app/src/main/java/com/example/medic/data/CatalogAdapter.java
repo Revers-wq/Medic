@@ -103,7 +103,7 @@ public class CatalogAdapter extends BaseAdapter{
         }
         if(category.category=="ЗОЖ")
         {
-            if(Objects.equals(qwe, "ЗОЖ"))
+            if( Objects.equals(qwe, "ЗОЖ"))
             {
                 View v = View.inflate(mContext, layout.item_catalog, null);
                 TextView mainText = v.findViewById(id.textView17);
