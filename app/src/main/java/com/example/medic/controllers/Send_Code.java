@@ -110,6 +110,7 @@ public class Send_Code extends AppCompatActivity {
 
                             return;
                         }
+                        sessionManager.saveToken(response.message());
                         Intent intent = new Intent(Send_Code.this, Create_record.class);
                         startActivity(intent);
                         return;

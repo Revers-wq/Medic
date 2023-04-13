@@ -7,13 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 
-import com.example.medic.Glavnay;
 import com.example.medic.R;
 import com.example.medic.data.ApiClient;
 import com.example.medic.models.Profile;
-import com.example.medic.models.ViewPagerItem;
 
 import java.util.List;
 
@@ -22,7 +19,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Create_record extends AppCompatActivity {
-    Button button;
     EditText ed1, ed2, ed3, ed4, ed5;
 
     @Override
@@ -34,13 +30,6 @@ public class Create_record extends AppCompatActivity {
         ed3 = findViewById(R.id.editTextTextPersonName5);
         ed4 = findViewById(R.id.editTextDate);
         ed5 = findViewById(R.id.editTextTextPersonName3);
-        button.findViewById(R.id.button6);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CreateRecord();
-            }
-        });
     }
     public void CreateRecord()
     {
