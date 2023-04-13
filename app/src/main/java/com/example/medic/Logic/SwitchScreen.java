@@ -4,7 +4,9 @@ import com.example.medic.R;
 import com.example.medic.models.ViewPagerItem;
 
 import java.util.ArrayList;
-
+//Класс для работы с Листом в котором хранятся данные на превые 3 активити
+//12.04.2023
+//Peristov Dmitrii
 public class SwitchScreen {
     public ArrayList<ViewPagerItem> viewPagerItemArrayList;
     public void setFinish(boolean finish) {

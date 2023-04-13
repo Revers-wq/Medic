@@ -1,5 +1,7 @@
 package com.example.medic.models;
-
+//Конструктор для каталога
+//13.04.2023
+//Peristov Dmitrii
 public class Catalog {
     String id;
     String name;

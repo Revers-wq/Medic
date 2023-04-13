@@ -1,5 +1,7 @@
 package com.example.medic.data;
-
+//Класс для сохранения данных
+//12.04.2023
+//Peristov Dmitrii
 import android.content.Context;
 import android.content.SharedPreferences;
 

@@ -1,5 +1,7 @@
 package com.example.medic.data;
-
+//Класс для создание фрагментов в ListView
+//13.04.2023
+//Peristov Dmitrii
 import static com.example.medic.R.*;
 
 import android.content.Context;

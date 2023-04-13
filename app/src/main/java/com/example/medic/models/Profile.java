@@ -1,5 +1,7 @@
 package com.example.medic.models;
-
+//Конструктор для работы с запросом
+//13.04.2023
+//Peristov Dmitrii
 public class Profile {
     String firstname;
     String lastname;

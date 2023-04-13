@@ -5,9 +5,12 @@ import java.io.IOException;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
-
+//Класс для работы с апи
+//12.04.2023
+//Peristov Dmitrii
 public class Authenticator implements Interceptor {
     SessionManager sessionManager;
+
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request.Builder builder = chain.request().newBuilder();

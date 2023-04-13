@@ -7,7 +7,9 @@ import com.example.medic.data.Service.ApiService;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
+//Класс для работы с апи
+//12.04.2023
+//Peristov Dmitrii
 public class ApiClient {
     private String BASE_URL ="https://medic.madskill.ru/api/";
     public ApiService apiService;
