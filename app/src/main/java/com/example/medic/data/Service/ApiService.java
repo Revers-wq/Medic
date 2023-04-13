@@ -11,6 +11,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public interface ApiService {
     @POST("sendCode")
@@ -18,7 +19,9 @@ public interface ApiService {
     @POST("signin")
     Call<SendCodeResponse> signin(@Header("email") String email , @Header("code") String code);
     @POST("createProfile")
-    Call<List<Profile>> createProfile(@Body Profile profile);
+    Call<List<Profile>> createProfil(@Body Profile profilee);
+    @PUT("createProfile")
+    Call<List<Profile>> createProfilee(@Body Profile profilee);
     @GET("catalog")
     Call<List<Catalog>> getCatalog();
 }

@@ -14,6 +14,7 @@ import android.widget.ListView;
 import com.example.medic.R;
 import com.example.medic.data.ApiClient;
 import com.example.medic.data.CatalogAdapter;
+import com.example.medic.data.SessionManager;
 import com.example.medic.models.Catalog;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -27,13 +28,15 @@ public class Glavnay extends AppCompatActivity {
     List<Catalog> catalogs;
     public CatalogAdapter catalogAdapter;
     BottomNavigationView bottomNavigationView;
+    SessionManager sessionManager;
     ListView  listik;
-    Button all, popular, covid, onko, zoch;
+    Button all, popular, covid, onko, zoch,korz;
     EditText textPer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glavnay);
+        sessionManager = new SessionManager(this);
         bottomNavigationView = findViewById(R.id.nav_bot);
         bottomNavigationView.setSelectedItemId(R.id.Analizi);
         all=findViewById(R.id.button14);
@@ -42,6 +45,13 @@ public class Glavnay extends AppCompatActivity {
         onko=findViewById(R.id.button18);
         zoch=findViewById(R.id.button19);
         textPer = findViewById(R.id.editTextTextPersonName6);
+        korz=findViewById(R.id.button22);
+        korz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Glavnay.this, Korzina.class));
+            }
+        });
         textPer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +117,6 @@ public class Glavnay extends AppCompatActivity {
                         return true;
                     case R.id.Profilee:
                         startActivity(new Intent(Glavnay.this, Profile_check.class));
-                        return true;
                 }
                 return false;
             }

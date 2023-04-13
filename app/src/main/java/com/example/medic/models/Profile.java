@@ -5,6 +5,8 @@ public class Profile {
     String lastname;
     String middlename;
     String bith;
+    String pol;
+    String image;
 
     public Profile(String firstname, String lastname, String middlename, String bith, String pol, String image) {
         this.firstname = firstname;
@@ -14,7 +16,4 @@ public class Profile {
         this.pol = pol;
         this.image = image;
     }
-
-    String pol;
-    String image;
 }
