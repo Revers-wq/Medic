@@ -13,6 +13,8 @@ import com.example.medic.R;
 import com.example.medic.data.SessionManager;
 import com.example.medic.Logic.SwitchScreen;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
     SessionManager sessionManager;
     int x;
@@ -25,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SessionManager sessionManager1 = new SessionManager(this);
+        String token = sessionManager1.getToken();
+        if(token!=null)
+        {
+            //startActivity(new Intent(MainActivity.this, Create_record.class));
+        }
         skip  = findViewById(R.id.textView);
         mainText= findViewById(R.id.textView2);
         text= findViewById(R.id.textView3);

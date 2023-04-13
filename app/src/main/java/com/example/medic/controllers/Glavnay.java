@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.medic.R;
@@ -28,6 +29,7 @@ public class Glavnay extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     ListView  listik;
     Button all, popular, covid, onko, zoch;
+    EditText textPer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,14 @@ public class Glavnay extends AppCompatActivity {
         covid=findViewById(R.id.button17);
         onko=findViewById(R.id.button18);
         zoch=findViewById(R.id.button19);
+        textPer = findViewById(R.id.editTextTextPersonName6);
+        textPer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Glavnay.this, Search.class));
+                return;
+            }
+        });
         all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

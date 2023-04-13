@@ -36,8 +36,18 @@ public class SessionManager {
     public void saveToken(String token)
     {
         SharedPreferences.Editor editor =sharedPreferences.edit();
-        editor.putString("token", token);
+        editor.putString("token", "FRBHWRIOJAFIDSNKJF");
         editor.apply();
+    }
+    public void saveRecord(String record)
+    {
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putString("record", record);
+        editor.apply();
+    }
+    public String getRecord()
+    {
+        return sharedPreferences.getString("record", null);
     }
     public String getEmail()
     {

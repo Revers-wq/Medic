@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 import com.example.medic.R;
 import com.example.medic.data.ApiClient;
+import com.example.medic.data.SessionManager;
 import com.example.medic.models.Profile;
 
 import java.util.List;
@@ -20,7 +21,7 @@ import retrofit2.Response;
 
 public class Create_record extends AppCompatActivity {
     EditText ed1, ed2, ed3, ed4, ed5;
-
+    Button bt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +31,20 @@ public class Create_record extends AppCompatActivity {
         ed3 = findViewById(R.id.editTextTextPersonName5);
         ed4 = findViewById(R.id.editTextDate);
         ed5 = findViewById(R.id.editTextTextPersonName3);
+        bt=findViewById(R.id.button20);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CreateRecord();
+            }
+        });
     }
     public void CreateRecord()
     {
         ApiClient apiClient = new ApiClient();
         Profile profile = new Profile(ed1.getText().toString(), ed2.getText().toString(), ed3.getText().toString(), ed4.getText().toString(), ed5.getText().toString(), "1");
+        String record=ed1.getText().toString()+" "+ ed2.getText().toString()+" "+ ed3.getText().toString()+" "+ ed4.getText().toString()+" "+ ed5.getText().toString();
+        SessionManager sessionManager =new SessionManager(this);
         apiClient.getApiService(this).createProfile(profile)
                 .enqueue(new Callback<List<Profile>>() {
                     @Override
@@ -43,6 +53,7 @@ public class Create_record extends AppCompatActivity {
                         {
                             return;
                         }
+                        sessionManager.saveRecord(record);
                         Intent intent = new Intent(Create_record.this, Glavnay.class);
                         startActivity(intent);
                         return;
