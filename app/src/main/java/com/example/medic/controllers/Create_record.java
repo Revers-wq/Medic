@@ -14,14 +14,15 @@ import com.example.medic.data.ApiClient;
 import com.example.medic.data.SessionManager;
 import com.example.medic.models.Profile;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Create_record extends AppCompatActivity {
+    Zakaz zakaz =new Zakaz();
     EditText ed1, ed2, ed3, ed4, ed5;
     Button bt;
     TextView tx16;
@@ -36,9 +37,25 @@ public class Create_record extends AppCompatActivity {
         ed5 = findViewById(R.id.editTextTextPersonName3);
         bt=findViewById(R.id.button20);
         tx16=findViewById(R.id.textView16);
+        SessionManager sessionManager = new SessionManager(this);
+        String perexod =" ";
+        perexod=sessionManager.getPerexod();
+        if(Objects.equals(perexod, "1"))
+        {
+            tx16.setText("Выход");
+        }
+        String asd="";
+        asd+=perexod;
+        String finalAsd = asd;
         tx16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(finalAsd.equals("1"))
+                {
+                    sessionManager.savePerexod("0");
+                    startActivity(new Intent(Create_record.this, Zakaz.class));
+                    return;
+                }
                 startActivity(new Intent(Create_record.this, Glavnay.class));
             }
         });
@@ -59,24 +76,7 @@ public class Create_record extends AppCompatActivity {
         String mid =ed3.getText().toString();
         String bith = ed4.getText().toString();
         String pol = ed5.getText().toString();
-        Profile profile = new Profile(name,lastname,mid,bith,pol, "dsadas");
-        apiClient.getApiService(this).createProfil(profile)
-                .enqueue(new Callback<List<Profile>>() {
-                    @Override
-                    public void onResponse(Call<List<Profile>> call, Response<List<Profile>> response) {
-                        if(response.isSuccessful())
-                        {
-                            return;
-                        }
-                        sessionManager.saveRecord(record);
-                        Intent intent = new Intent(Create_record.this, Glavnay.class);
-                        startActivity(intent);
-                    }
+        sessionManager.saveLastName(mid) ;
 
-                    @Override
-                    public void onFailure(Call<List<Profile>> call, Throwable t) {
-                        return;
-                    }
-                });
     }
 }

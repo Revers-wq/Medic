@@ -23,7 +23,8 @@ public class Korzina extends AppCompatActivity {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Korzina.this, zakaz.class));
+                Intent intent = new Intent(Korzina.this, Zakaz.class);
+                startActivity(intent);
             }
         });
         im8.setOnClickListener(new View.OnClickListener() {

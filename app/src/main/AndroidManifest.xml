@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Medic"
         tools:targetApi="31">
         <activity
-            android:name=".zakaz"
+            android:name=".controllers.Zakaz"
             android:exported="false" />
         <activity
             android:name=".controllers.Korzina"

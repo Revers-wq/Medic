@@ -35,6 +35,36 @@ public class SessionManager {
         editor.putString("email", email);
         editor.apply();
     }
+    public void savePerexod(String perexod)
+    {
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putString("perexod", perexod);
+        editor.apply();
+    }
+    public void saveLastName(String lastName)
+    {
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putString("familia", lastName);
+        editor.apply();
+    }
+    public void saveAdres(String adress)
+    {
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putString("adress", adress);
+        editor.apply();
+    }
+    public String getAdress()
+    {
+        return sharedPreferences.getString("adress", null);
+    }
+    public String getLastName()
+    {
+        return sharedPreferences.getString("familia", null);
+    }
+    public String getPerexod()
+    {
+        return sharedPreferences.getString("perexod", null);
+    }
     public void saveToken(String token)
     {
         SharedPreferences.Editor editor =sharedPreferences.edit();
